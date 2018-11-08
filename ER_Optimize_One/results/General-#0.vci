@@ -1,15 +1,15 @@
-file 493666 1541714550                                          
+file 11221 1541715644                                           
 version 2
-run General-0-20181108-16:58:16-23188
+run General-0-20181108-17:17:09-23860
 attr configname General
-attr datetime 20181108-16:58:16
+attr datetime 20181108-17:17:09
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ER_Optimize_One
-attr processid 23188
+attr processid 23860
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,8 +19,8 @@ param **.source.interArrivalTime exponential(1.0s)
 param **.source1.interArrivalTime exponential(1.0s)
 param **.server.serviceTime exponential(0.5s)
 param **.server1.serviceTime exponential(0.5s)
-param **.server2.serviceTime exponential(0.9s)
-param **.server3.serviceTime exponential(0.9s)
+param **.server2.serviceTime exponential(9s)
+param **.server3.serviceTime exponential(9s)
 param **.source.numJobs 10000
 param **.source.jobName "\"patient\""
 param **.source1.numJobs 500
@@ -28,11 +28,11 @@ param **.source1.jobName "\"patient_a\""
 param **.passiveQueue2.capacity 10
 param **.passiveQueue3.capacity 10
 param **.server4.serviceTime exponential(10s)
-param **.server5.serviceTime exponential(12s)
-param **.server6.serviceTime exponential(12s)
-param **.server7.serviceTime exponential(12s)
-param **.server8.serviceTime exponential(12s)
-param **.server9.serviceTime exponential(12s)
+param **.server5.serviceTime exponential(9s)
+param **.server6.serviceTime exponential(9s)
+param **.server7.serviceTime exponential(9s)
+param **.server8.serviceTime exponential(9s)
+param **.server9.serviceTime exponential(9s)
 param **.source.jobType 1
 param **.source1.jobType 0
 
@@ -46,7 +46,7 @@ vector 2 ER_Optimize_One.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-0	1634 56492 0 62923 0 9877.743152602445 1973 0 5 1564 2482
-1	58126 317 0 5592 0 472.370306088075 13 0 2 8 10
-2	58443 435221 10 63001 1.725676610603 9897.984712487689 10500 1.0015078e-005 48.375874490613 6662.379864886 26699.137981502
+0	1625 58 0 350 0 34.351877619794 3 0 1 1 1
+1	1683 3920 0 968 0 92.120654311559 158 0 10 899 5983
+2	5603 5616 10 964 1.725676610603 91.716985432264 148 0.004700375332 55.924692433994 1057.863751614 17801.886029999
 
