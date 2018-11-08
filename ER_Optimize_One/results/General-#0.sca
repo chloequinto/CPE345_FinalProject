@@ -1,0 +1,156 @@
+version 2
+run General-0-20181108-16:08:11-12004
+attr configname General
+attr datetime 20181108-16:08:11
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ER_Optimize_One
+attr processid 12004
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.source.interArrivalTime exponential(1.0s)
+param **.source1.interArrivalTime exponential(1.0s)
+param **.server.serviceTime exponential(0.5s)
+param **.server1.serviceTime exponential(0.5s)
+param **.server2.serviceTime exponential(0.9s)
+param **.server3.serviceTime exponential(0.9s)
+param **.source.numJobs 10000
+param **.source.jobName "\"patient\""
+param **.source1.numJobs 10000
+param **.source1.jobName "\"patient_a\""
+param **.passiveQueue2.capacity 2
+param **.passiveQueue3.capacity 2
+param **.server4.serviceTime exponential(0.5s)
+param **.server5.serviceTime exponential(0.5s)
+param **.server6.serviceTime exponential(0.4s)
+param **.server7.serviceTime exponential(0.4s)
+param **.server8.serviceTime exponential(0.3s)
+param **.server9.serviceTime exponential(0.3s)
+
+scalar ER_Optimize_One.source created:last 6
+attr interpolationmode none
+attr title "the number of jobs created, last"
+scalar ER_Optimize_One.source1 created:last 12
+attr interpolationmode none
+attr title "the number of jobs created, last"
+scalar ER_Optimize_One.passiveQueue2 queueingTime:mean nan
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ER_Optimize_One.passiveQueue2 queueingTime:max nan
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ER_Optimize_One.passiveQueue2 queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ER_Optimize_One.passiveQueue2 queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ER_Optimize_One.passiveQueue2 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+scalar ER_Optimize_One.passiveQueue3 queueingTime:mean nan
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ER_Optimize_One.passiveQueue3 queueingTime:max nan
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ER_Optimize_One.passiveQueue3 queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ER_Optimize_One.passiveQueue3 queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ER_Optimize_One.passiveQueue3 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
+scalar ER_Optimize_One.sink generation:mean 0
+attr interpolationmode none
+attr title "the generation of the arrived jobs, mean"
+scalar ER_Optimize_One.sink generation:max 0
+attr interpolationmode none
+attr title "the generation of the arrived jobs, max"
+scalar ER_Optimize_One.sink delaysVisited:mean 0
+attr interpolationmode none
+attr title "the total number of delays visited by arrived jobs, mean"
+scalar ER_Optimize_One.sink delaysVisited:max 0
+attr interpolationmode none
+attr title "the total number of delays visited by arrived jobs, max"
+scalar ER_Optimize_One.sink queuesVisited:mean 0
+attr interpolationmode none
+attr title "the total number of queues visited by arrived jobs, mean"
+scalar ER_Optimize_One.sink queuesVisited:max 0
+attr interpolationmode none
+attr title "the total number of queues visited by arrived jobs, max"
+scalar ER_Optimize_One.sink totalServiceTime:mean 0.76160018943347
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs, mean"
+attr unit s
+scalar ER_Optimize_One.sink totalServiceTime:max 1.756390802296
+attr interpolationmode none
+attr title "the total time spent  by arrived jobs, max"
+attr unit s
+scalar ER_Optimize_One.sink totalDelayTime:mean 0
+attr interpolationmode none
+attr title "the total time spent in delay nodes by arrived jobs, mean"
+attr unit s
+scalar ER_Optimize_One.sink totalDelayTime:max 0
+attr interpolationmode none
+attr title "the total time spent in delay nodes by arrived jobs, max"
+attr unit s
+scalar ER_Optimize_One.sink totalQueueingTime:mean 0
+attr interpolationmode none
+attr title "the total time spent in queues by arrived jobs, mean"
+attr unit s
+scalar ER_Optimize_One.sink totalQueueingTime:max 0
+attr interpolationmode none
+attr title "the total time spent in queues by arrived jobs, max"
+attr unit s
+scalar ER_Optimize_One.sink lifeTime:mean 0.76160018943347
+attr interpolationmode none
+attr title "lifetime of arrived jobs, mean"
+attr unit s
+scalar ER_Optimize_One.sink lifeTime:max 1.756390802296
+attr interpolationmode none
+attr title "lifetime of arrived jobs, max"
+attr unit s
+scalar ER_Optimize_One.server busy:timeavg 0
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server1 busy:timeavg 0
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server2 busy:timeavg 0.51104816895978
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server3 busy:timeavg 0.39724496427719
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server4 busy:timeavg 0.14229808904513
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server5 busy:timeavg 0.087095427457966
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server6 busy:timeavg 0.1226615828752
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server7 busy:timeavg 0
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server8 busy:timeavg 0
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+scalar ER_Optimize_One.server9 busy:timeavg 0
+attr interpolationmode sample-hold
+attr title "server busy state, timeavg"
+

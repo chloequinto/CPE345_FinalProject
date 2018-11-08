@@ -1,0 +1,65 @@
+version 2
+run General-0-20181108-16:08:11-12004
+attr configname General
+attr datetime 20181108-16:08:11
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ER_Optimize_One
+attr processid 12004
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.source.interArrivalTime exponential(1.0s)
+param **.source1.interArrivalTime exponential(1.0s)
+param **.server.serviceTime exponential(0.5s)
+param **.server1.serviceTime exponential(0.5s)
+param **.server2.serviceTime exponential(0.9s)
+param **.server3.serviceTime exponential(0.9s)
+param **.source.numJobs 10000
+param **.source.jobName "\"patient\""
+param **.source1.numJobs 10000
+param **.source1.jobName "\"patient_a\""
+param **.passiveQueue2.capacity 2
+param **.passiveQueue3.capacity 2
+param **.server4.serviceTime exponential(0.5s)
+param **.server5.serviceTime exponential(0.5s)
+param **.server6.serviceTime exponential(0.4s)
+param **.server7.serviceTime exponential(0.4s)
+param **.server8.serviceTime exponential(0.3s)
+param **.server9.serviceTime exponential(0.3s)
+
+vector 0 ER_Optimize_One.passiveQueue2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 ER_Optimize_One.passiveQueue3 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 ER_Optimize_One.sink lifeTime:vector ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	0	0	0
+1	0	0	0
+2	18	2.469518295433	1.673643790867
+2	20	2.54030847581	0.488503213197
+2	30	2.65495119078	1.756390802296
+2	32	2.761265547056	0.939482027101
+2	34	2.785564229506	0.176579569569
+2	36	3.039469096632	0.436615347349
+2	42	3.237050059004	0.052546202184
+2	48	3.927533576705	0.286520526758
+2	58	5.992529992282	0.584501713426
+2	64	7.396620464096	1.504990080292
+2	70	7.544419640374	0.588494310499
+2	76	7.909511309541	0.448984808114
+2	94	8.670379550945	0.370420196618
+2	96	8.694429804544	0.229624068628
+2	98	8.895950963946	0.522306254154
+2	100	9.336131781035	1.627532337847
+2	102	9.745299295785	1.26006797147
+
