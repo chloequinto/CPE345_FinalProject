@@ -26,22 +26,22 @@ network ER_Optimize_One
     @display("bgb=3270.4436,1947.309");
     submodules:
         source: Source {
-            @display("p=69.03311,388.31125");
+            @display("p=195.59381,546.51215;t=Waiting Room Source");
         }
         source1: Source {
-            @display("p=2465.0574,477.479;i=block/ambulance;is=vs");
+            @display("p=1708.5695,546.51215;i=block/ambulance;is=vs;t=Ambulance");
         }
         passiveQueue2: PassiveQueue {
-            @display("p=667.32007,1095.9006");
+            @display("p=667.32007,1095.9006;t=Queue for FastTrack");
         }
         passiveQueue3: PassiveQueue {
-            @display("p=1124.6644,845.6556");
+            @display("p=1124.6644,854.2847;t=Queue for ED");
         }
         classifier: Classifier {
-            @display("p=733.4768,546.51215");
+            @display("p=733.4768,546.51215;t=Triage Nurse");
         }
         sink: Sink {
-            @display("p=2465.0574,1803.49");
+            @display("p=2490.9448,1849.5121;i=misc/house");
         }
         server: Server {
             @display("p=1256.9779,1771.8499");
