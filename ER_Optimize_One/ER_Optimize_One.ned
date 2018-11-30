@@ -23,79 +23,118 @@ import org.omnetpp.queueing.Source;
 
 network ER_Optimize_One
 {
-    @display("bgb=3270.4436,1947.309");
+    @display("bgb=3796.821,2306.8564;i=misc/building");
     submodules:
-        source: Source {
-            @display("p=195.59381,546.51215;t=Waiting Room Source");
+        source_waiting_room: Source {
+            @display("p=681.70197,115.05518;i=block/users");
         }
-        source1: Source {
-            @display("p=1708.5695,546.51215;i=block/ambulance;is=vs;t=Ambulance");
+        source_ambulance: Source {
+            @display("p=1653.9182,115.05518;i=msg/resp");
         }
-        passiveQueue2: PassiveQueue {
-            @display("p=667.32007,1095.9006;t=Queue for FastTrack");
+        triage_nurse_waiting_room: Classifier {
+            @display("p=681.70197,342.28918");
         }
-        passiveQueue3: PassiveQueue {
-            @display("p=1124.6644,854.2847;t=Queue for ED");
+        triage_nurse_ambulance: Classifier {
+            @display("p=1653.9182,342.28918");
         }
-        classifier: Classifier {
-            @display("p=733.4768,546.51215;t=Triage Nurse");
+        level_5_queue: PassiveQueue {
+            @display("p=681.70197,581.0287");
+        }
+        level_3_4_queue: PassiveQueue {
+            @display("p=1173.5629,581.0287");
+        }
+        level_1_2_queue: PassiveQueue {
+            @display("p=1653.9182,566.6468");
+        }
+        nurse: Server {
+            @display("p=681.70197,793.88074");
+        }
+        nurse1: Server {
+            @display("p=1173.5629,793.88074");
+        }
+        nurse2: Server {
+            @display("p=1653.9182,779.49884");
+        }
+        waiting_for_doc: PassiveQueue {
+            @display("p=681.70197,975.09265");
+        }
+        waiting_for_doc1: PassiveQueue {
+            @display("p=1173.5629,975.09265");
+        }
+        waiting_for_doc2: PassiveQueue {
+            @display("p=1653.9182,960.71075");
+        }
+        doc: Server {
+            @display("p=911.8123,1199.4503;i=block/user");
+        }
+        doc1: Server {
+            @display("p=1420.9315,1199.4503;i=block/user");
+        }
+        wait_for_work: PassiveQueue {
+            @display("p=911.8123,1544.6158");
+        }
+        wait_for_work1: PassiveQueue {
+            @display("p=1420.9315,1521.6049");
+        }
+        Xray: Server {
+            @display("p=523.5011,1610.7726");
+        }
+        MRI: Server {
+            @display("p=1156.3046,1610.7726");
+        }
+        Surgery: Server {
+            @display("p=1708.5695,1610.7726");
+        }
+        router: Router {
+            @display("p=1420.9315,1372.0331");
+        }
+        wait_for_result: PassiveQueue {
+            @display("p=523.5011,1803.49");
+        }
+        wait_for_result1: PassiveQueue {
+            @display("p=1156.3046,1803.49");
+        }
+        wait_for_result2: PassiveQueue {
+            @display("p=1708.5695,1803.49");
+        }
+        router1: Router {
+            @display("p=911.8123,1372.0331");
         }
         sink: Sink {
-            @display("p=2490.9448,1849.5121;i=misc/house");
-        }
-        server: Server {
-            @display("p=1429.5607,1771.8499");
-        }
-        server1: Server {
-            @display("p=1587.7615,1570.5033");
-        }
-        server2: Server {
-            @display("p=2010.5894,983.7218");
-        }
-        server3: Server {
-            @display("p=2329.8674,983.7218");
-        }
-        server4: Server {
-            @display("p=2522.585,983.7218");
-        }
-        server5: Server {
-            @display("p=2692.2913,983.7218");
-        }
-        server6: Server {
-            @display("p=2850.4922,983.7218");
-        }
-        server7: Server {
-            @display("p=2850.4922,1187.9448");
-        }
-        server8: Server {
-            @display("p=2850.4922,1374.9094");
-        }
-        server9: Server {
-            @display("p=2850.4922,1570.5033");
+            @display("p=1150.5519,1337.5165;i=misc/house");
         }
     connections:
-        classifier.rest --> passiveQueue2.in++;
-        classifier.out++ --> passiveQueue3.in++;
-        passiveQueue3.out++ --> server2.in++;
-        passiveQueue3.out++ --> server3.in++;
-        server2.out --> sink.in++;
-        server3.out --> sink.in++;
-        passiveQueue2.out++ --> server.in++;
-        passiveQueue2.out++ --> server1.in++;
-        server1.out --> sink.in++;
-        server.out --> sink.in++;
-        source1.out --> classifier.in++;
-        passiveQueue3.out++ --> server4.in++;
-        passiveQueue3.out++ --> server5.in++;
-        passiveQueue3.out++ --> server6.in++;
-        passiveQueue3.out++ --> server7.in++;
-        passiveQueue3.out++ --> server8.in++;
-        passiveQueue3.out++ --> server9.in++;
-        server4.out --> sink.in++;
-        server5.out --> sink.in++;
-        server6.out --> sink.in++;
-        server7.out --> sink.in++;
-        server8.out --> sink.in++;
-        server9.out --> sink.in++;
-        source.out --> classifier.in++;
+        source_waiting_room.out --> triage_nurse_waiting_room.in++;
+        source_ambulance.out --> triage_nurse_ambulance.in++;
+        triage_nurse_waiting_room.out++ --> level_3_4_queue.in++;
+        triage_nurse_waiting_room.rest --> level_5_queue.in++;
+        triage_nurse_ambulance.out++ --> level_1_2_queue.in++;
+        triage_nurse_ambulance.rest --> level_3_4_queue.in++;
+        level_5_queue.out++ --> nurse.in++;
+        level_3_4_queue.out++ --> nurse1.in++;
+        level_1_2_queue.out++ --> nurse2.in++;
+        nurse.out --> waiting_for_doc.in++;
+        nurse1.out --> waiting_for_doc1.in++;
+        nurse2.out --> waiting_for_doc2.in++;
+        waiting_for_doc.out++ --> doc.in++;
+        waiting_for_doc1.out++ --> doc.in++;
+        waiting_for_doc1.out++ --> doc1.in++;
+        waiting_for_doc2.out++ --> doc1.in++;
+        wait_for_work.out++ --> Xray.in++;
+        wait_for_work.out++ --> MRI.in++;
+        wait_for_work1.out++ --> MRI.in++;
+        wait_for_work1.out++ --> Surgery.in++;
+        Xray.out --> wait_for_result.in++;
+        MRI.out --> wait_for_result1.in++;
+        Surgery.out --> wait_for_result2.in++;
+        wait_for_result2.out++ --> doc1.in++;
+        wait_for_result.out++ --> doc.in++;
+        wait_for_result1.out++ --> doc.in++;
+        wait_for_result1.out++ --> doc1.in++;
+        doc1.out --> router.in++;
+        router.out++ --> wait_for_work1.in++;
+        doc.out --> router1.in++;
+        router1.out++ --> wait_for_work.in++;
+        router1.out++ --> sink.in++;
+        router.out++ --> sink.in++;
 }
