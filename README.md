@@ -1,2 +1,12 @@
 # CPE345_FinalProject
-Optimal System 
+Project to find the most optimal ER System
+
+
+## Requirements
+- Omentt++
+
+## Authors
+
+* **Amanda Ly** </br>
+* **Chloe Quinto**</br>
+* **Rachel Yao** </br>
