@@ -44,10 +44,10 @@ network ER_Optimize_One
             @display("p=2490.9448,1849.5121;i=misc/house");
         }
         server: Server {
-            @display("p=1256.9779,1771.8499");
+            @display("p=1429.5607,1771.8499");
         }
         server1: Server {
-            @display("p=1645.2892,1642.4127");
+            @display("p=1587.7615,1570.5033");
         }
         server2: Server {
             @display("p=2010.5894,983.7218");
@@ -84,7 +84,6 @@ network ER_Optimize_One
         passiveQueue2.out++ --> server1.in++;
         server1.out --> sink.in++;
         server.out --> sink.in++;
-        source.out --> classifier.in++;
         source1.out --> classifier.in++;
         passiveQueue3.out++ --> server4.in++;
         passiveQueue3.out++ --> server5.in++;
@@ -98,4 +97,5 @@ network ER_Optimize_One
         server7.out --> sink.in++;
         server8.out --> sink.in++;
         server9.out --> sink.in++;
+        source.out --> classifier.in++;
 }
