@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for ER_Optimize_One
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -KQUEUEINGLIB_PROJ=../queueinglib -DQUEUEING_IMPORT -I. -I$$\(QUEUEINGLIB_PROJ\) -L$$\(QUEUEINGLIB_PROJ\) -lqueueinglib$$\(D\)
+#  opp_makemake -f --deep -O out -KQUEUEINGLIB_PROJ=C:/omnetpp-5.4.1/samples/queueinglib -DQUEUEING_IMPORT -I. -I$$\(QUEUEINGLIB_PROJ\) -L$$\(QUEUEINGLIB_PROJ\) -lqueueinglib$$\(D\)
 #
 
 # Name of target to be created (-o option)
@@ -39,7 +39,7 @@ MSGFILES =
 SMFILES =
 
 # Other makefile variables (-K)
-QUEUEINGLIB_PROJ=../queueinglib
+QUEUEINGLIB_PROJ=C:/omnetpp-5.4.1/samples/queueinglib
 
 #------------------------------------------------------------------------------
 

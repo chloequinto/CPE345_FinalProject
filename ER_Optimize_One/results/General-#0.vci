@@ -1,15 +1,15 @@
-file 11221 1541715644                                           
+file 511946 1542149723                                          
 version 2
-run General-0-20181108-17:17:09-23860
+run General-0-20181113-17:52:24-21412
 attr configname General
-attr datetime 20181108-17:17:09
+attr datetime 20181113-17:52:24
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ER_Optimize_One
-attr processid 23860
+attr processid 21412
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -46,7 +46,7 @@ vector 2 ER_Optimize_One.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-0	1625 58 0 350 0 34.351877619794 3 0 1 1 1
-1	1683 3920 0 968 0 92.120654311559 158 0 10 899 5983
-2	5603 5616 10 964 1.725676610603 91.716985432264 148 0.004700375332 55.924692433994 1057.863751614 17801.886029999
+0	1625 56519 0 62740 0 10009.934509784662 1973 0 6 1668 2846
+1	58144 20884 0 5386 0 485.594282225882 787 0 10 5069 37709
+2	79028 432916 10 62806 1.725676610603 10024.236845192036 10435 2.7675948e-005 58.280722923326 12020.067901043 148701.69308268
 
