@@ -1,9 +1,11 @@
 # CPE345_FinalProject
 Project to find the most optimal ER System
 
+![](https://img.shields.io/badge/Release-V1.1-blue.svg) ![](https://img.shields.io/badge/License-MIT-orange.svg)
+
 
 ## Requirements
-- Omentt++
+- OMNeT++
 
 ## Authors
 
