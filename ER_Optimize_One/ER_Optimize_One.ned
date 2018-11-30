@@ -31,12 +31,6 @@ network ER_Optimize_One
         source_ambulance: Source {
             @display("p=1653.9182,115.05518;i=msg/resp");
         }
-        triage_nurse_waiting_room: Classifier {
-            @display("p=681.70197,342.28918");
-        }
-        triage_nurse_ambulance: Classifier {
-            @display("p=1653.9182,342.28918");
-        }
         level_5_queue: PassiveQueue {
             @display("p=681.70197,581.0287");
         }
@@ -103,13 +97,13 @@ network ER_Optimize_One
         sink: Sink {
             @display("p=1150.5519,1337.5165;i=misc/house");
         }
+        triage_nurse_ambulance: Router {
+            @display("p=1656.7947,336.5364");
+        }
+        triage_nurse_waiting_room: Router {
+            @display("p=681.70197,362.42383");
+        }
     connections:
-        source_waiting_room.out --> triage_nurse_waiting_room.in++;
-        source_ambulance.out --> triage_nurse_ambulance.in++;
-        triage_nurse_waiting_room.out++ --> level_3_4_queue.in++;
-        triage_nurse_waiting_room.rest --> level_5_queue.in++;
-        triage_nurse_ambulance.out++ --> level_1_2_queue.in++;
-        triage_nurse_ambulance.rest --> level_3_4_queue.in++;
         level_5_queue.out++ --> nurse.in++;
         level_3_4_queue.out++ --> nurse1.in++;
         level_1_2_queue.out++ --> nurse2.in++;
@@ -137,4 +131,10 @@ network ER_Optimize_One
         router1.out++ --> wait_for_work.in++;
         router1.out++ --> sink.in++;
         router.out++ --> sink.in++;
+        source_ambulance.out --> triage_nurse_ambulance.in++;
+        source_waiting_room.out --> triage_nurse_waiting_room.in++;
+        triage_nurse_waiting_room.out++ --> level_5_queue.in++;
+        triage_nurse_waiting_room.out++ --> level_3_4_queue.in++;
+        triage_nurse_ambulance.out++ --> level_3_4_queue.in++;
+        triage_nurse_ambulance.out++ --> level_1_2_queue.in++;
 }
