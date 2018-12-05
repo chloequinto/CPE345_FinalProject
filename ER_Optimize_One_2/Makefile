@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for ER_Alternate1
+# OMNeT++/OMNEST Makefile for ER_Optimize_One
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -KQUEUEINGLIB_PROJ=../queueinglib -DQUEUEING_IMPORT -I. -I$$\(QUEUEINGLIB_PROJ\) -L$$\(QUEUEINGLIB_PROJ\) -lqueueinglib$$\(D\)
+#  opp_makemake -f --deep -O out -KQUEUEINGLIB_PROJ=../queueinglib -KQUEUEINGLIBEXT_PROJ=../queueinglibext -DQUEUEING_IMPORT -I. -I$$\(QUEUEINGLIB_PROJ\) -L$$\(QUEUEINGLIB_PROJ\) -L$$\(QUEUEINGLIBEXT_PROJ\) -lqueueinglib$$\(D\) -lqueueinglibext$$\(D\)
 #
 
 # Name of target to be created (-o option)
-TARGET = ER_Alternate1$(D)$(EXE_SUFFIX)
+TARGET = ER_Optimize_One$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)
@@ -22,7 +22,7 @@ INCLUDE_PATH = -I. -I$(QUEUEINGLIB_PROJ)
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)$(QUEUEINGLIB_PROJ)  -lqueueinglib$(D)
+LIBS = $(LDFLAG_LIBPATH)$(QUEUEINGLIB_PROJ) $(LDFLAG_LIBPATH)$(QUEUEINGLIBEXT_PROJ)  -lqueueinglib$(D) -lqueueinglibext$(D)
 
 # Output directory
 PROJECT_OUTPUT_DIR = out
@@ -40,6 +40,7 @@ SMFILES =
 
 # Other makefile variables (-K)
 QUEUEINGLIB_PROJ=../queueinglib
+QUEUEINGLIBEXT_PROJ=../queueinglibext
 
 #------------------------------------------------------------------------------
 
@@ -64,7 +65,7 @@ include $(CONFIGFILE)
 # Simulation kernel and user interface libraries
 OMNETPP_LIBS = $(OPPMAIN_LIB) $(USERIF_LIBS) $(KERNEL_LIBS) $(SYS_LIBS)
 ifneq ($(TOOLCHAIN_NAME),clangc2)
-LIBS += -Wl,-rpath,$(abspath $(QUEUEINGLIB_PROJ))
+LIBS += -Wl,-rpath,$(abspath $(QUEUEINGLIB_PROJ)) -Wl,-rpath,$(abspath $(QUEUEINGLIBEXT_PROJ))
 endif
 
 COPTS = $(CFLAGS) $(IMPORT_DEFINES) -DQUEUEING_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)

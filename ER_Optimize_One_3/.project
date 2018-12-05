@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ER_Alternate1</name>
+	<name>ER_Optimize_One_3</name>
 	<comment></comment>
 	<projects>
 		<project>queueinglib</project>
+		<project>queueinglibext</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
