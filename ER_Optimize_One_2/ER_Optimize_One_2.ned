@@ -23,7 +23,7 @@ import org.omnetpp.queueing.Source;
 
 network ER_Optimize_One_2
 {
-    @display("bgb=3796.821,2306.8564;i=misc/building");
+    @display("bgb=5918.5,3135;i=misc/building");
     submodules:
         source_waiting_room: Source {
             @display("p=681.70197,115.05518;i=block/users");
@@ -65,37 +65,37 @@ network ER_Optimize_One_2
             @display("p=1420.9315,1199.4503;i=block/user");
         }
         wait_for_work: PassiveQueue {
-            @display("p=911.8123,1544.6158");
+            @display("p=555.75,1928.5");
         }
         wait_for_work1: PassiveQueue {
-            @display("p=1420.9315,1521.6049");
+            @display("p=1168.5,1762.25");
         }
         Xray: Server {
-            @display("p=523.5011,1610.7726");
+            @display("p=565.25,2237.25");
         }
         MRI: Server {
-            @display("p=1156.3046,1610.7726");
+            @display("p=1178,2113.75");
         }
         Surgery: Server {
-            @display("p=1708.5695,1610.7726");
+            @display("p=1743.25,2318");
         }
         router: Router {
-            @display("p=1420.9315,1372.0331");
+            @display("p=1743.25,1714.75");
         }
         wait_for_result: PassiveQueue {
-            @display("p=523.5011,1803.49");
+            @display("p=570,2508");
         }
         wait_for_result1: PassiveQueue {
-            @display("p=1156.3046,1803.49");
+            @display("p=1182.75,2436.75");
         }
         wait_for_result2: PassiveQueue {
-            @display("p=1708.5695,1803.49");
+            @display("p=1738.5,2650.5");
         }
         router1: Router {
-            @display("p=911.8123,1372.0331");
+            @display("p=555.75,1615");
         }
         sink: Sink {
-            @display("p=1150.5519,1337.5165;i=misc/house");
+            @display("p=1301.5,1472.5;i=misc/house");
         }
         triage_nurse_ambulance: Router {
             @display("p=1656.7947,336.5364");
@@ -104,10 +104,13 @@ network ER_Optimize_One_2
             @display("p=681.70197,362.42383");
         }
         doc2: Server {
-            @display("p=1173.5629,2062.3643;i=block/user");
+            @display("p=1192.25,2964;i=block/user");
         }
         router2: Router {
-            @display("p=1472.7063,2062.3643");
+            @display("p=1534.25,2968.75");
+        }
+        wait_for_work2: PassiveQueue {
+            @display("p=1743.25,2014");
         }
     connections:
         level_5_queue.out++ --> nurse.in++;
@@ -121,9 +124,7 @@ network ER_Optimize_One_2
         waiting_for_doc1.out++ --> doc1.in++;
         waiting_for_doc2.out++ --> doc1.in++;
         wait_for_work.out++ --> Xray.in++;
-        wait_for_work.out++ --> MRI.in++;
         wait_for_work1.out++ --> MRI.in++;
-        wait_for_work1.out++ --> Surgery.in++;
         Xray.out --> wait_for_result.in++;
         MRI.out --> wait_for_result1.in++;
         Surgery.out --> wait_for_result2.in++;
@@ -148,5 +149,6 @@ network ER_Optimize_One_2
         router2.out++ --> sink.in++;
         router2.out++ --> wait_for_work1.in++;
         router2.out++ --> wait_for_work.in++;
-        wait_for_result2.out++ --> doc.in++;
+        wait_for_work2.out++ --> Surgery.in++;
+        router.out++ --> wait_for_work2.in++;
 }
