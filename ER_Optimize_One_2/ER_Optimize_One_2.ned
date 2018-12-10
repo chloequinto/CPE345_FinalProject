@@ -23,94 +23,94 @@ import org.omnetpp.queueing.Source;
 
 network ER_Optimize_One_2
 {
-    @display("bgb=5918.5,3135;i=misc/building");
+    @display("bgb=8142.7495,5959.012;i=misc/building");
     submodules:
         source_waiting_room: Source {
-            @display("p=681.70197,115.05518;i=block/users");
+            @display("p=2798.145,251.685;i=block/users");
         }
         source_ambulance: Source {
-            @display("p=1653.9182,115.05518;i=msg/resp");
+            @display("p=4596.952,251.685;i=msg/resp");
         }
         level_5_queue: PassiveQueue {
-            @display("p=681.70197,581.0287");
+            @display("p=2798.145,1384.2675");
         }
         level_3_4_queue: PassiveQueue {
-            @display("p=1173.5629,581.0287");
+            @display("p=3686.4448,1384.2675");
         }
         level_1_2_queue: PassiveQueue {
-            @display("p=1653.9182,566.6468");
+            @display("p=4596.952,1384.2675");
         }
         nurse: Server {
-            @display("p=681.70197,793.88074");
+            @display("p=2798.145,2043.09");
         }
         nurse1: Server {
-            @display("p=1173.5629,793.88074");
+            @display("p=3671.64,1991.2725");
         }
         nurse2: Server {
-            @display("p=1653.9182,779.49884");
+            @display("p=4596.952,2043.09");
         }
         waiting_for_doc: PassiveQueue {
-            @display("p=681.70197,975.09265");
+            @display("p=2798.145,2561.265");
         }
         waiting_for_doc1: PassiveQueue {
-            @display("p=1173.5629,975.09265");
+            @display("p=3686.4448,2561.265");
         }
         waiting_for_doc2: PassiveQueue {
-            @display("p=1653.9182,960.71075");
+            @display("p=4596.952,2561.265");
         }
         doc: Server {
-            @display("p=911.8123,1199.4503;i=block/user");
+            @display("p=3382.9424,3101.6475;i=block/user");
         }
         doc1: Server {
-            @display("p=1420.9315,1199.4503;i=block/user");
+            @display("p=3960.3374,3101.6475;i=block/user");
         }
         wait_for_work: PassiveQueue {
-            @display("p=555.75,1928.5");
+            @display("p=2605.68,4100.985");
         }
         wait_for_work1: PassiveQueue {
-            @display("p=1168.5,1762.25");
+            @display("p=3753.0674,4100.985");
         }
         Xray: Server {
-            @display("p=565.25,2237.25");
+            @display("p=2509.4475,4582.1475");
         }
         MRI: Server {
-            @display("p=1178,2113.75");
+            @display("p=3753.0674,4515.525");
         }
         Surgery: Server {
-            @display("p=1743.25,2318");
+            @display("p=4989.2847,4582.1475");
         }
         router: Router {
-            @display("p=1743.25,1714.75");
+            @display("p=4989.2847,3582.8098");
         }
         wait_for_result: PassiveQueue {
-            @display("p=570,2508");
+            @display("p=2605.68,5100.3223");
         }
         wait_for_result1: PassiveQueue {
-            @display("p=1182.75,2436.75");
+            @display("p=3753.0674,5100.3223");
         }
         wait_for_result2: PassiveQueue {
-            @display("p=1738.5,2650.5");
+            @display("p=4989.2847,5100.3223");
         }
         router1: Router {
-            @display("p=555.75,1615");
+            @display("p=2605.68,3582.8098");
         }
         sink: Sink {
-            @display("p=1301.5,1472.5;i=misc/house");
+            @display("p=3753.0674,3612.42;i=misc/house");
         }
         triage_nurse_ambulance: Router {
-            @display("p=1656.7947,336.5364");
+            @display("p=4596.952,769.86");
         }
         triage_nurse_waiting_room: Router {
-            @display("p=681.70197,362.42383");
+            @display("p=2798.145,769.86");
         }
         doc2: Server {
-            @display("p=1192.25,2964;i=block/user");
+            @display("p=3686.4448,5655.51;i=block/user");
         }
         router2: Router {
-            @display("p=1534.25,2968.75");
+            @display("p=4782.0146,5655.51");
         }
         wait_for_work2: PassiveQueue {
-            @display("p=1743.25,2014");
+            @display("p=4989.2847,4100.985");
         }
     connections:
         level_5_queue.out++ --> nurse.in++;

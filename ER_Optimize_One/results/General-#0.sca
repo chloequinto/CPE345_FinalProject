@@ -1,19 +1,19 @@
 version 2
-run General-0-20181205-12:49:53-7428
+run General-0-20181210-13:15:48-8000
 attr configname General
-attr datetime 20181205-12:49:53
+attr datetime 20181210-13:15:48
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network ER_Optimize_One
-attr processid 7428
+attr processid 8000
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
-attr seedset 666
+attr seedset 0
 param **.source_waiting_room.interArrivalTime exponential(1.0s)
 param **.source_ambulance.interArrivalTime exponential(1.0s)
 param **.nurse.serviceTime exponential(8s)
@@ -29,219 +29,221 @@ param **.source_ambulance.numJobs 3000
 param **.level_5_queue.capacity 150
 param **.level_3_4_queue.capacity 100
 param **.level_1_2_queue.capacity 100
+param **.triage_nurse_ambulance.randomGateIndex bernoulli(0.2)
+param **.triage_nurse_waiting_room.randomGateIndex bernoulli(0.2)
 
-scalar ER_Optimize_One.source_waiting_room created:last 7000
+scalar ER_Optimize_One.source_waiting_room created:last 30
 attr interpolationmode none
 attr title "the number of jobs created, last"
-scalar ER_Optimize_One.source_ambulance created:last 3000
+scalar ER_Optimize_One.source_ambulance created:last 36
 attr interpolationmode none
 attr title "the number of jobs created, last"
-scalar ER_Optimize_One.level_5_queue queueingTime:mean 1078.2606101923
+scalar ER_Optimize_One.level_5_queue queueingTime:mean 6.129854293719
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.level_5_queue queueingTime:max 1389.2921135129
+scalar ER_Optimize_One.level_5_queue queueingTime:max 6.129854293719
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.level_5_queue queueLength:timeavg 63.281092320068
+scalar ER_Optimize_One.level_5_queue queueLength:timeavg 11.836256897498
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.level_5_queue queueLength:max 150
+scalar ER_Optimize_One.level_5_queue queueLength:max 22
 attr interpolationmode sample-hold
 attr title "queue length, max"
-scalar ER_Optimize_One.level_5_queue dropped:count 2558
+scalar ER_Optimize_One.level_5_queue dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.level_3_4_queue queueingTime:mean 771.31194841702
+scalar ER_Optimize_One.level_3_4_queue queueingTime:mean 15.71399475686
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.level_3_4_queue queueingTime:max 1091.4630442551
+scalar ER_Optimize_One.level_3_4_queue queueingTime:max 18.159926010563
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.level_3_4_queue queueLength:timeavg 42.778702211405
+scalar ER_Optimize_One.level_3_4_queue queueLength:timeavg 12.365403803504
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.level_3_4_queue queueLength:max 100
+scalar ER_Optimize_One.level_3_4_queue queueLength:max 29
 attr interpolationmode sample-hold
 attr title "queue length, max"
-scalar ER_Optimize_One.level_3_4_queue dropped:count 3937
+scalar ER_Optimize_One.level_3_4_queue dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.level_1_2_queue queueingTime:mean 727.37273922613
+scalar ER_Optimize_One.level_1_2_queue queueingTime:mean 24.304873706155
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.level_1_2_queue queueingTime:max 967.56962909794
+scalar ER_Optimize_One.level_1_2_queue queueingTime:max 24.304873706155
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.level_1_2_queue queueLength:timeavg 18.524265822983
+scalar ER_Optimize_One.level_1_2_queue queueLength:timeavg 3.708534458702
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.level_1_2_queue queueLength:max 100
+scalar ER_Optimize_One.level_1_2_queue queueLength:max 9
 attr interpolationmode sample-hold
 attr title "queue length, max"
-scalar ER_Optimize_One.level_1_2_queue dropped:count 1033
+scalar ER_Optimize_One.level_1_2_queue dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.nurse busy:timeavg 0.46960192067893
+scalar ER_Optimize_One.nurse busy:timeavg 0.97442102363166
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.nurse1 busy:timeavg 0.45775794908944
+scalar ER_Optimize_One.nurse1 busy:timeavg 0.97112075482919
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.nurse2 busy:timeavg 0.21909998644395
+scalar ER_Optimize_One.nurse2 busy:timeavg 0.88990226674587
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.waiting_for_doc queueingTime:mean 49.988489401816
+scalar ER_Optimize_One.waiting_for_doc queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc queueingTime:max 191.10838190787
+scalar ER_Optimize_One.waiting_for_doc queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc queueLength:timeavg 2.9365597167034
+scalar ER_Optimize_One.waiting_for_doc queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.waiting_for_doc queueLength:max 31
+scalar ER_Optimize_One.waiting_for_doc queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.waiting_for_doc dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.waiting_for_doc1 queueingTime:mean 28.818514046143
+scalar ER_Optimize_One.waiting_for_doc1 queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc1 queueingTime:max 138.65145022603
+scalar ER_Optimize_One.waiting_for_doc1 queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc1 queueLength:timeavg 1.5983398585816
+scalar ER_Optimize_One.waiting_for_doc1 queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.waiting_for_doc1 queueLength:max 20
+scalar ER_Optimize_One.waiting_for_doc1 queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.waiting_for_doc1 dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.waiting_for_doc2 queueingTime:mean 4669.0562187334
+scalar ER_Optimize_One.waiting_for_doc2 queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc2 queueingTime:max 6249.8969684917
+scalar ER_Optimize_One.waiting_for_doc2 queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.waiting_for_doc2 queueLength:timeavg 118.90855110997
+scalar ER_Optimize_One.waiting_for_doc2 queueLength:timeavg 0.016278458524172
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.waiting_for_doc2 queueLength:max 343
+scalar ER_Optimize_One.waiting_for_doc2 queueLength:max 1
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.waiting_for_doc2 dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.doc busy:timeavg 0.99946100610069
+scalar ER_Optimize_One.doc busy:timeavg 0.56871532373117
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.doc1 busy:timeavg 0.99658405872336
+scalar ER_Optimize_One.doc1 busy:timeavg 0.27021041221584
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.wait_for_work queueingTime:mean 4.5203906066527
+scalar ER_Optimize_One.wait_for_work queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.wait_for_work queueingTime:max 24.691451742577
+scalar ER_Optimize_One.wait_for_work queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.wait_for_work queueLength:timeavg 0.056793732110194
+scalar ER_Optimize_One.wait_for_work queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.wait_for_work queueLength:max 4
+scalar ER_Optimize_One.wait_for_work queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.wait_for_work dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.wait_for_work1 queueingTime:mean 5.4539039827808
+scalar ER_Optimize_One.wait_for_work1 queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.wait_for_work1 queueingTime:max 25.649115637494
+scalar ER_Optimize_One.wait_for_work1 queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.wait_for_work1 queueLength:timeavg 0.060805824870285
+scalar ER_Optimize_One.wait_for_work1 queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.wait_for_work1 queueLength:max 4
+scalar ER_Optimize_One.wait_for_work1 queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.wait_for_work1 dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.Xray busy:timeavg 0.36209459529599
+scalar ER_Optimize_One.Xray busy:timeavg 0
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.MRI busy:timeavg 0.45320364885501
+scalar ER_Optimize_One.MRI busy:timeavg 0.26770501179827
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.Surgery busy:timeavg 0.22415722660288
+scalar ER_Optimize_One.Surgery busy:timeavg 0
 attr interpolationmode sample-hold
 attr title "server busy state, timeavg"
-scalar ER_Optimize_One.wait_for_result queueingTime:mean 2550.3050936246
+scalar ER_Optimize_One.wait_for_result queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.wait_for_result queueingTime:max 7145.6770896729
+scalar ER_Optimize_One.wait_for_result queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.wait_for_result queueLength:timeavg 136.68271211251
+scalar ER_Optimize_One.wait_for_result queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.wait_for_result queueLength:max 399
+scalar ER_Optimize_One.wait_for_result queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.wait_for_result dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.wait_for_result1 queueingTime:mean 6070.444909478
+scalar ER_Optimize_One.wait_for_result1 queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.wait_for_result1 queueingTime:max 12092.810510855
+scalar ER_Optimize_One.wait_for_result1 queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.wait_for_result1 queueLength:timeavg 371.03574253801
+scalar ER_Optimize_One.wait_for_result1 queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.wait_for_result1 queueLength:max 744
+scalar ER_Optimize_One.wait_for_result1 queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.wait_for_result1 dropped:count 0
 attr interpolationmode none
 attr title "drop event, count"
-scalar ER_Optimize_One.wait_for_result2 queueingTime:mean 3536.2288684081
+scalar ER_Optimize_One.wait_for_result2 queueingTime:mean nan
 attr interpolationmode none
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar ER_Optimize_One.wait_for_result2 queueingTime:max 9758.0423826562
+scalar ER_Optimize_One.wait_for_result2 queueingTime:max nan
 attr interpolationmode none
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar ER_Optimize_One.wait_for_result2 queueLength:timeavg 91.459334233564
+scalar ER_Optimize_One.wait_for_result2 queueLength:timeavg 0
 attr interpolationmode sample-hold
 attr title "queue length, timeavg"
-scalar ER_Optimize_One.wait_for_result2 queueLength:max 255
+scalar ER_Optimize_One.wait_for_result2 queueLength:max 0
 attr interpolationmode sample-hold
 attr title "queue length, max"
 scalar ER_Optimize_One.wait_for_result2 dropped:count 0
@@ -259,17 +261,17 @@ attr title "the total number of delays visited by arrived jobs, mean"
 scalar ER_Optimize_One.sink delaysVisited:max 0
 attr interpolationmode none
 attr title "the total number of delays visited by arrived jobs, max"
-scalar ER_Optimize_One.sink queuesVisited:mean 6.3414239482201
+scalar ER_Optimize_One.sink queuesVisited:mean 0
 attr interpolationmode none
 attr title "the total number of queues visited by arrived jobs, mean"
-scalar ER_Optimize_One.sink queuesVisited:max 34
+scalar ER_Optimize_One.sink queuesVisited:max 0
 attr interpolationmode none
 attr title "the total number of queues visited by arrived jobs, max"
-scalar ER_Optimize_One.sink totalServiceTime:mean 29.892344480374
+scalar ER_Optimize_One.sink totalServiceTime:mean 19.413695408253
 attr interpolationmode none
 attr title "the total time spent  by arrived jobs, mean"
 attr unit s
-scalar ER_Optimize_One.sink totalServiceTime:max 192.50985649628
+scalar ER_Optimize_One.sink totalServiceTime:max 19.413695408253
 attr interpolationmode none
 attr title "the total time spent  by arrived jobs, max"
 attr unit s
@@ -281,20 +283,37 @@ scalar ER_Optimize_One.sink totalDelayTime:max 0
 attr interpolationmode none
 attr title "the total time spent in delay nodes by arrived jobs, max"
 attr unit s
-scalar ER_Optimize_One.sink totalQueueingTime:mean 6056.6015993628
+scalar ER_Optimize_One.sink totalQueueingTime:mean 0
 attr interpolationmode none
 attr title "the total time spent in queues by arrived jobs, mean"
 attr unit s
-scalar ER_Optimize_One.sink totalQueueingTime:max 17433.79422959
+scalar ER_Optimize_One.sink totalQueueingTime:max 0
 attr interpolationmode none
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar ER_Optimize_One.sink lifeTime:mean 6086.4939438431
+scalar ER_Optimize_One.sink lifeTime:mean 19.413695408253
 attr interpolationmode none
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar ER_Optimize_One.sink lifeTime:max 17512.156862656
+scalar ER_Optimize_One.sink lifeTime:max 19.413695408253
 attr interpolationmode none
 attr title "lifetime of arrived jobs, max"
 attr unit s
+scalar ER_Optimize_One.wait_for_work2 queueingTime:mean nan
+attr interpolationmode none
+attr title "queueing time at dequeue, mean"
+attr unit s
+scalar ER_Optimize_One.wait_for_work2 queueingTime:max nan
+attr interpolationmode none
+attr title "queueing time at dequeue, max"
+attr unit s
+scalar ER_Optimize_One.wait_for_work2 queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar ER_Optimize_One.wait_for_work2 queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar ER_Optimize_One.wait_for_work2 dropped:count 0
+attr interpolationmode none
+attr title "drop event, count"
 

@@ -23,91 +23,91 @@ import org.omnetpp.queueing.Source;
 
 network ER_Optimize_One_3
 {
-    @display("bgb=6703.75,5029.75;i=misc/building");
+    @display("bgb=10901.478,8284.318;i=misc/building");
     submodules:
         source_waiting_room: Source {
-            @display("p=914.5,263.5;i=block/users");
+            @display("p=4147.192,372.442;i=block/users");
         }
         source_ambulance: Source {
-            @display("p=1573.25,279;i=msg/resp");
+            @display("p=6351.646,372.442;i=msg/resp");
         }
         level_5_queue: PassiveQueue {
-            @display("p=604.5,1240");
+            @display("p=4157.258,2154.124");
         }
         level_3_4_queue: PassiveQueue {
-            @display("p=1209,1255.5");
+            @display("p=5324.914,2154.124");
         }
         level_1_2_queue: PassiveQueue {
-            @display("p=1782.5,1247.75");
+            @display("p=6351.646,2164.19");
         }
         nurse: Server {
-            @display("p=426.25,1774.75");
+            @display("p=4147.192,2969.47");
         }
         nurse1: Server {
-            @display("p=930,1790.25");
+            @display("p=4871.944,2969.47");
         }
         nurse2: Server {
-            @display("p=1929.75,1782.5");
+            @display("p=6381.8438,2969.47");
         }
         waiting_for_doc: PassiveQueue {
-            @display("p=410.75,2216.5");
+            @display("p=4147.192,3643.892");
         }
         waiting_for_doc1: PassiveQueue {
-            @display("p=1154.75,2208.75");
+            @display("p=5214.188,3643.892");
         }
         waiting_for_doc2: PassiveQueue {
-            @display("p=1922,2247.5");
+            @display("p=6472.438,3643.892");
         }
         doc: Server {
-            @display("p=813.75,2666;i=block/user");
+            @display("p=4600.162,4338.446;i=block/user");
         }
         doc1: Server {
-            @display("p=1410.5,2642.75;i=block/user");
+            @display("p=5787.95,4257.918;i=block/user");
         }
         wait_for_work: PassiveQueue {
-            @display("p=341,3665.75");
+            @display("p=3754.618,5657.092");
         }
         wait_for_work1: PassiveQueue {
-            @display("p=1123.75,3720");
+            @display("p=5264.518,5657.092");
         }
         Xray: Server {
-            @display("p=348.75,4247");
+            @display("p=3754.618,6341.58");
         }
         MRI: Server {
-            @display("p=1123.75,4285.75");
+            @display("p=5274.584,6381.8438");
         }
         Surgery: Server {
-            @display("p=1844.5,4239.25");
+            @display("p=6381.8438,6240.92");
         }
         router: Router {
-            @display("p=1875.5,3185.25");
+            @display("p=6381.8438,4892.076");
         }
         wait_for_result: PassiveQueue {
-            @display("p=325.5,4735.25");
+            @display("p=4328.38,7458.906");
         }
         wait_for_result1: PassiveQueue {
-            @display("p=1116,4727.5");
+            @display("p=5214.188,7458.906");
         }
         wait_for_result2: PassiveQueue {
-            @display("p=1829,4719.75");
+            @display("p=6381.8438,7458.906");
         }
         router1: Router {
-            @display("p=364.25,3092.25");
+            @display("p=3754.618,4892.076");
         }
         sink: Sink {
-            @display("p=1116,3177.5;i=misc/house");
+            @display("p=5194.056,4892.076;i=misc/house");
         }
         triage_nurse_ambulance: Router {
-            @display("p=1557.75,736.25");
+            @display("p=6381.8438,1127.392");
         }
         triage_nurse_waiting_room: Router {
-            @display("p=937.75,751.75");
+            @display("p=4147.192,1258.25");
         }
         nurse3: Server {
-            @display("p=1480.25,1805.75");
+            @display("p=5566.498,2969.47");
         }
         wait_for_work2: PassiveQueue {
-            @display("p=1860,3735.5");
+            @display("p=6381.8438,5657.092");
         }
     connections:
         level_5_queue.out++ --> nurse.in++;
