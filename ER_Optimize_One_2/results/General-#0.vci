@@ -1,20 +1,20 @@
-file 581416 1544032199                                          
+file 2030590 1544472465                                         
 version 2
-run General-0-20181205-12:49:53-7428
+run General-0-20181210-15:07:31-24276
 attr configname General
-attr datetime 20181205-12:49:53
+attr datetime 20181210-15:07:31
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
-attr network ER_Optimize_One
-attr processid 7428
+attr network ER_Optimize_One_2
+attr processid 24276
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
-attr seedset 666
+attr seedset 0
 param **.source_waiting_room.interArrivalTime exponential(1.0s)
 param **.source_ambulance.interArrivalTime exponential(1.0s)
 param **.nurse.serviceTime exponential(8s)
@@ -25,59 +25,66 @@ param **.doc1.serviceTime exponential(7.3s)
 param **.Xray.serviceTime exponential(6.8s)
 param **.MRI.serviceTime exponential(7.5s)
 param **.Surgery.serviceTime exponential(9.1s)
-param **.source_waiting_room.numJobs 7000
-param **.source_ambulance.numJobs 3000
-param **.level_5_queue.capacity 150
-param **.level_3_4_queue.capacity 100
-param **.level_1_2_queue.capacity 100
+param **.source_waiting_room.numJobs 6600
+param **.source_ambulance.numJobs 3400
+param **.level_5_queue.capacity 2000
+param **.level_3_4_queue.capacity 3000
+param **.level_1_2_queue.capacity 2000
+param **.doc2.serviceTime exponential(7.1s)
+param **.triage_nurse_ambulance.randomGateIndex bernoulli(0.18)
+param **.triage_nurse_waiting_room.randomGateIndex bernoulli(0.14)
 
-vector 0 ER_Optimize_One.level_5_queue queueLength:vector ETV
+vector 0 ER_Optimize_One_2.level_5_queue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 1 ER_Optimize_One.level_3_4_queue queueLength:vector ETV
+vector 1 ER_Optimize_One_2.level_3_4_queue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 2 ER_Optimize_One.level_1_2_queue queueLength:vector ETV
+vector 2 ER_Optimize_One_2.level_1_2_queue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 3 ER_Optimize_One.waiting_for_doc queueLength:vector ETV
+vector 3 ER_Optimize_One_2.waiting_for_doc queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 4 ER_Optimize_One.waiting_for_doc1 queueLength:vector ETV
+vector 4 ER_Optimize_One_2.waiting_for_doc1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 5 ER_Optimize_One.waiting_for_doc2 queueLength:vector ETV
+vector 5 ER_Optimize_One_2.waiting_for_doc2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 6 ER_Optimize_One.wait_for_work queueLength:vector ETV
+vector 6 ER_Optimize_One_2.wait_for_work queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 7 ER_Optimize_One.wait_for_work1 queueLength:vector ETV
+vector 7 ER_Optimize_One_2.wait_for_work1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 8 ER_Optimize_One.wait_for_result queueLength:vector ETV
+vector 8 ER_Optimize_One_2.wait_for_result queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 9 ER_Optimize_One.wait_for_result1 queueLength:vector ETV
+vector 9 ER_Optimize_One_2.wait_for_result1 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 10 ER_Optimize_One.wait_for_result2 queueLength:vector ETV
+vector 10 ER_Optimize_One_2.wait_for_result2 queueLength:vector ETV
 attr interpolationmode sample-hold
 attr title "queue length, vector"
-vector 11 ER_Optimize_One.sink lifeTime:vector ETV
+vector 11 ER_Optimize_One_2.wait_for_work2 queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 12 ER_Optimize_One_2.sink lifeTime:vector ETV
 attr interpolationmode none
 attr title "lifetime of arrived jobs, vector"
 attr unit s
-0	2705 62782 0 50149 0 8287.685820592275 2075 0 150 278425 40039809
-1	65487 58276 0 49812 0 8082.860635493328 1961 0 100 183806 17883364
-2	123763 26261 0 30536 0 3872.190313868666 901 0 100 76852 7215534
-3	150024 59855 0 50245 0 8331.888979717102 2077 0 31 14392 181206
-4	209879 56265 0 49919 0 8155.698049052195 1961 0 20 7646 56788
-5	266144 27134 0 52553 0 9783.614531547544 901 0 343 153668 35998730
-6	293278 12999 0 64694 0 17624.175378138805 445 0 4 360 578
-7	306277 11474 0 64611 0 17581.505292396628 395 0 4 357 597
-8	317751 57978 0 64709 0 17651.412017160747 1895 0 399 263073 69101215
-9	375729 67818 0 64668 0 17618.481812608785 2161 0 744 811926 406818092
-10	443547 28887 0 64620 0 17592.956589493136 915 0 255 79805 13533033
-11	472434 108980 124 64722 11.151653937818 17669.673701488949 2472 8.587723068416 17512.156862656 15045813.02918 155129168028.18
+0	3050 51763 0 55284 0 7588.92723428407 1735 0 123 112225 9141011
+1	54813 241640 0 102776 0 30547.102332322902 7697 0 3000 13290780 30018058944
+2	296453 35282 0 40548 0 4536.079814069703 1193 0 150 83820 7895280
+3	331735 51409 0 55363 0 7624.28527749576 1785 0 24 9756 94820
+4	383144 227416 0 102788 0 30549.422861438983 7697 0 17 15042 77636
+5	610560 34169 0 41355 0 4666.627814963221 1189 0 25 9348 100186
+6	644729 201036 0 142484 0 53017.065671425381 6689 0 20 17628 103856
+7	845765 248427 0 142515 0 53048.503388294301 8245 0 28 33554 304518
+8	1094192 334929 0 142452 0 53010.641847942437 10293 0 1176 7675454 6943198750
+9	1429121 345674 0 142476 0 53016.564868181275 10745 0 1030 6495566 4935539648
+10	1774795 12689 0 50720 0 6138.567499578172 411 0 138 27575 2486085
+11	1787484 3027 0 50125 0 6051.93013515072 103 0 5 89 179
+12	1790511 240077 272 142548 33.486444763134 53100.52885646027 5342 8.474327383334 52838.978718807 128316885.02741 4370987644149.7
 

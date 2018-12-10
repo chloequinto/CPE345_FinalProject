@@ -134,8 +134,8 @@ network ER_Optimize_One
         router.out++ --> sink.in++;
         source_ambulance.out --> triage_nurse_ambulance.in++; 
         source_waiting_room.out --> triage_nurse_waiting_room.in++;
-        triage_nurse_waiting_room.out++ --> level_5_queue.in++;
         triage_nurse_waiting_room.out++ --> level_3_4_queue.in++;
+        triage_nurse_waiting_room.out++ --> level_5_queue.in++;
         triage_nurse_ambulance.out++ --> level_3_4_queue.in++;
         triage_nurse_ambulance.out++ --> level_1_2_queue.in++;
         router.out++ --> wait_for_work2.in++;
