@@ -16,13 +16,13 @@ Project in OMNET++ to answer the question: "Does increasing the amount of doctor
 ## Designs
 
 ### Original OMNET++ Model
-![pic_1](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d0.png?raw=true)
+![pic_1](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d0.png?raw=true=200x400)
 
 ### Alternate Design #1 (Additional Doctor)
-![pic_2](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d1.png?raw=true)
+![pic_2](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d1.png?raw=true=200x400)
 
 ### Alternate Design #2 (Additional Nurse)
-![pic_3](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d2.png?raw=true)
+![pic_3](https://github.com/chloequinto/CPE345_FinalProject/blob/master/Pics/d2.png?raw=true=200x400)
 
 
 ## Results
