@@ -13,13 +13,36 @@ Project in OMNET++ to answer the question: "Does increasing the amount of doctor
  - Clone or download this repository
  - Install Queue Library
  - Run Simulations
+## Designs
 
-### Authors
+### Original OMNET++ Model
+![pic_1](https://github.com/chloequinto/CPE345_FinalProject/Pics/d0.png)
+
+### Alternate Design #1 (Additional Doctor)
+![pic_2](https://github.com/chloequinto/CPE345_FinalProject/Pics/d1.png)
+
+### Alternate Design #2 (Additional Nurse)
+![pic_3](https://github.com/chloequinto/CPE345_FinalProject/Pics/d2.png)
+
+
+## Results
+Average Queue Times | Original System | Alt. Design #1 | Alt. Design #2
+---|---|---|---
+Average Queue Time Post-Level Placement | 5156.297 |4944.523 | 3034.802
+Average Queue Time for Doctor  | 1707.492 | 38.637 | 6933.22
+Average Queue Time for Additional Work | 15.500 | 22.240 | 16.587
+Average Queue Time for Results | 6010.723 | 5350.676 | 12389.977
+
+Original System | Alt. Design #1 | Alt. Design #2
+---|---|---
+Average Total Queue Time for System | 12,890.01 | 10,356.08 | 22,383.50
+
+
+## Authors
 * **Amanda Ly** </br>
 * **Chloe Quinto**</br>
 * **Rachel Yao** </br>
 
 
-
-### License
+## License
 [MIT](https://choosealicense.com/licenses/mit/)
